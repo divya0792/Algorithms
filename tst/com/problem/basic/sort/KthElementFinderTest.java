@@ -16,7 +16,7 @@ public class KthElementFinderTest {
         Arrays.sort(arrayToSort);
 
         // Act
-        int kthElement = new KthElementFinder().find(arr, k);
+        int kthElement = new KthElementFinder().sort(arr, k);
 
         // Assert
         assertEquals(arrayToSort[k - 1], kthElement);
