@@ -16,7 +16,6 @@ public class DoublyLinkedList {
             this.next = next;
             this.prev = prev;
         }
-
     }
 
     public void addToTail(int data) {
@@ -95,19 +94,4 @@ public class DoublyLinkedList {
         return count;
     }
 
-    public static void main(String[] args) {
-        DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
-
-        doublyLinkedList.addSorted(5);
-        doublyLinkedList.addSorted(3);
-        doublyLinkedList.addSorted(7);
-        doublyLinkedList.addSorted(4);
-        doublyLinkedList.addSorted(2);
-        doublyLinkedList.addSorted(9);
-
-        System.out.println(doublyLinkedList.getCount());
-
-        int[] arr = doublyLinkedList.toArray();
-        System.out.print(arr.length);
-    }
 }

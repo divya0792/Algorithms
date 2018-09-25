@@ -25,6 +25,19 @@ public class SingleLinkedList {
         }
     }
 
+
+    public int[] toArray() {
+        int[] toArray = new int[getCount()];
+        int arrayCounter = 0;
+        Node temp = head;
+        while(temp != null) {
+            toArray[arrayCounter] = temp.data;
+            arrayCounter++;
+            temp = temp.next;
+        }
+        return toArray;
+    }
+
     public int getCount() {
         int count = 0;
         Node temp = head;
@@ -34,14 +47,5 @@ public class SingleLinkedList {
         }
         return count;
     }
-
-    public static void main(String[] args) {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-        for(int i = 0; i < 10; i++) {
-            singleLinkedList.add(i);
-        }
-        System.out.print(singleLinkedList.getCount());
-    }
-
 
 }
