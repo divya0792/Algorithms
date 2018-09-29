@@ -1,5 +1,7 @@
 package com.util.basic.list;
 
+import java.util.Random;
+
 public class SingleLinkedList {
 
     public Node head;
@@ -23,6 +25,41 @@ public class SingleLinkedList {
             tail.next = node;
             tail = node;
         }
+    }
+
+    public void addToHead(int data) {
+        Node node = new Node();
+        if(tail == null || head == null) {
+            node.data = data;
+
+        }
+    }
+
+    public void createCycle() {
+        Random random = new Random();
+        int randomNum = random.nextInt(getCount()) + 1;
+        int start = 1;
+        Node tempHead = this.head;
+        while(start < randomNum) {
+            tempHead = tempHead.next;
+            start++;
+        }
+        tail.next = tempHead;
+    }
+
+    public void reverse() {
+        Node back = null;
+        Node middle = this.head;
+        Node front;
+        this.tail = middle;
+
+        while(middle != null) {
+            front = middle.next;
+            middle.next = back;
+            back = middle;
+            middle = front;
+        }
+        this.head = back;
     }
 
 
