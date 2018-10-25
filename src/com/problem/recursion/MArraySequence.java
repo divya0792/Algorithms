@@ -2,6 +2,9 @@ package com.problem.recursion;
 
 public class MArraySequence {
     public void generateArray(int size, int numbers) {
+        if(size < 1 || numbers < 1) {
+            throw new IllegalArgumentException("size or numbers should be greater than 0");
+        }
         int[] result = new int[size];
         generateArray(result, numbers, 0);
 
