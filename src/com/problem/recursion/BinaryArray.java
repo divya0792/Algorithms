@@ -2,6 +2,9 @@ package com.problem.recursion;
 
 public class BinaryArray {
     public void generateArray(int size) {
+        if(size < 1) {
+            throw new IllegalArgumentException("size cannot be zero or negative");
+        }
         int[] result = new int[size];
         generateArray(result, 0) ;
     }
