@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class FindNthElementTest {
+public class NthElementFinderTest {
 
     @Test
     public void find() {
@@ -15,13 +15,13 @@ public class FindNthElementTest {
         int key = 3;
         int expectedValue = arr[arr.length - key];
         SingleLinkedList singleLinkedList = new SingleLinkedList();
-        FindNthElement findNthElement = new FindNthElement();
+        NthElementFinder nthElementFinder = new NthElementFinder();
 
         //Act
         for(int i = 0; i < arr.length; i++) {
             singleLinkedList.add(arr[i]);
         }
-        int actualValue = findNthElement.findNthElementFromEnd(singleLinkedList, key);
+        int actualValue = nthElementFinder.findNthElementFromEnd(singleLinkedList, key);
 
         //Assert
         assertEquals(expectedValue, actualValue);

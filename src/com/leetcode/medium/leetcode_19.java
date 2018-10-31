@@ -24,13 +24,12 @@ public class leetcode_19 {
         }
         if(back == null) {
             return head.next;
-        }
-        if(back.next == null) {
+        } else if(back.next == null) {
             return null;
+        } else {
+            back.next = back.next.next;
+            return head;
         }
-
-        back.next = back.next.next;
-        return head;
     }
 }
 

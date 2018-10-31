@@ -2,7 +2,7 @@ package com.util.basic.sort;
 
 /**
  * This Class implements Quicksort in ascending order
- * Start with a pivot( in this case it is last index) and wall(startIndex -1) and keep assembling the smaller elements
+ * Start with a pivot( in this case it is last index) and wall(startIndex 0) and keep assembling smaller elements
  * to the left of the wall and greater or equal elements to the right. keep sorting the assembled arrays.
  * space complexity = O(1)
  * time complexity = O(n*log n) for average case , O(n^2) for worst case.

@@ -1,7 +1,6 @@
 package com.problem.basic.list;
 
 import com.util.basic.list.SingleLinkedList;
-import com.util.basic.list.SingleLinkedList.Node;
 
 public class PalindromeChecker {
 

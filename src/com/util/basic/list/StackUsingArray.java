@@ -14,7 +14,6 @@ public class StackUsingArray {
         if(index + 1 > arr.length) {
             arr = resizeArray(arr.length * 2);
         }
-
         arr[index++] = data;
     }
 

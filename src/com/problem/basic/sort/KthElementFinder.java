@@ -8,7 +8,7 @@ import com.util.basic.sort.SortUtility;
  * time complexity = O(n * log n) for average case O(n^2) for worst case.
  */
 public class KthElementFinder {
-    public int find(int[] arr, int k) {
+    public int sort(int[] arr, int k) {
         sort(arr, 0, arr.length - 1, k - 1);
         return arr[k - 1];
     }

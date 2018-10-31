@@ -4,21 +4,21 @@ import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class StackUsingLinkedList implements Iterable<Integer> {
+public class StackUsingLinkedList<E> implements Iterable<E> {
     private Node head;
     private int count = 0;
 
     private class Node {
-        int data;
+        E data;
         Node next;
 
-        Node(int data, Node next) {
+        Node(E data, Node next) {
             this.data = data;
             this.next = next;
         }
     }
 
-    private class ListIterator implements Iterator<Integer> {
+    private class ListIterator implements Iterator<E> {
         private Node current = head;
 
         @Override
@@ -27,22 +27,22 @@ public class StackUsingLinkedList implements Iterable<Integer> {
         }
 
         @Override
-        public Integer next() {
+        public E next() {
             if(!hasNext()) {
                 throw new NoSuchElementException("element does not exists");
             }
-            int currentData = current.data;
+            E currentData = current.data;
             current = current.next;
             return currentData;
         }
     }
 
     @Override
-    public Iterator<Integer> iterator() {
+    public Iterator<E> iterator() {
         return new ListIterator();
     }
 
-    public void push(int data) {
+    public void push(E data) {
         Node node;
        if(head == null) {
             node = new Node(data, null);
@@ -53,8 +53,8 @@ public class StackUsingLinkedList implements Iterable<Integer> {
        count++;
     }
 
-    public int pop() {
-        int returnHead;
+    public E pop() {
+        E returnHead;
         if(head == null) {
             throw new EmptyStackException();
         } else {
@@ -73,8 +73,8 @@ public class StackUsingLinkedList implements Iterable<Integer> {
        return count == 0;
     }
 
-    public int[] toArray() {
-        int[] arr = new int[size()];
+    public E[] toArray() {
+        E[] arr = (E[]) new Object[size()];
         Node temp = head;
         int start = 0;
         while(temp != null){

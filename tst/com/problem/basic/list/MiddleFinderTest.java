@@ -3,28 +3,26 @@ package com.problem.basic.list;
 import com.util.basic.list.SingleLinkedList;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
-public class ReverseSinglyLinkedListTest {
+public class MiddleFinderTest {
 
     @Test
-    public void reverse() {
+    public void find() {
 
         //Arrange
-        int[] arr = {5,4,3,2,1};
+        int[] arr = {2,4,5,6,7,8,9,0,4,2,2};
+        int expectedValue = arr[(arr.length - 1) / 2];
         SingleLinkedList singleLinkedList = new SingleLinkedList();
+        MiddleFinder middleFinder = new MiddleFinder();
 
         //Act
         for(int i = 0; i < arr.length; i++) {
             singleLinkedList.add(arr[i]);
         }
-        singleLinkedList.reverse();
-        Arrays.sort(arr);
+        int actualValue = middleFinder.findMiddleElement(singleLinkedList);
 
         //Assert
-        assertArrayEquals(arr, singleLinkedList.toArray());
+        assertEquals(expectedValue, actualValue);
     }
-
 }
